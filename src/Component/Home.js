@@ -10,7 +10,7 @@ function Home() {
   
   const navigate=useNavigate()
   const[newdata,newSetdata]=useState({id:"",ework:"",eprice:"",edate:"",dailywork:""})
-  const {Note,Getnotes,EditNote,loading,msg}=useContext(mycontext)
+  const {Note,Getnotes,EditNote,loading}=useContext(mycontext)
    useEffect(()=>{
     if(localStorage.getItem('token')){ 
       Getnotes()

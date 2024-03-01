@@ -1,9 +1,8 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext} from 'react'
 import Alertcontext from './Context/AlertContext'
 
 export default function Alerts() {
-  const[info,setInfo]=useState("")
-  const[danger,setdenger]=useState("")
+  
     const {alert}=useContext(Alertcontext)
 
   return (

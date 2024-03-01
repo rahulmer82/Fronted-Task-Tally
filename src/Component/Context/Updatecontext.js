@@ -11,7 +11,7 @@ const Newdata=(props)=>{
     // main state this to update Clint data;
     const [Note,setNote]=useState(mydata)
     const[loading,setloading]=useState(true)
-    const[msg,setmsg]=useState([])
+
 
 
     //fetch data
@@ -28,9 +28,9 @@ const Newdata=(props)=>{
 
         const json=await data.json()
         setNote(json.data);
-        setmsg(json)
+    
         setloading(false)
-        console.log(json)
+
         Checkalert(json.message,json.success?"Success":"Faill")
         
         
@@ -52,7 +52,7 @@ const responce=await fetch(`${host}/api/data/addwork`,{
 const json= await responce.json()
 setNote(Note.concat(json.data))
 setloading(false)
-setmsg(json)
+
 Checkalert(json.message,json.success?"Success":"Faill")
     };
 
@@ -84,7 +84,7 @@ for (let index = 0; index < newNotes.length; index++) {
   }
 } 
 setNote(newNotes)
-setmsg(json)
+
 setloading(false)
 Checkalert(json.message,json.success?"Success":"Faill")
 console.log(json)
@@ -104,7 +104,7 @@ const response=await fetch(`${host}/api/data/delete/${id}`,{
  const json= await response.json();
 const Newnote= Note.filter((note)=>{return note._id !==id})
 setNote(Newnote)
-setmsg(json)
+
 setloading(false)
 Checkalert(json.message, json.success?"Success":"Faill")
   }  
@@ -116,7 +116,7 @@ Checkalert(json.message, json.success?"Success":"Faill")
 
 
 return (
-<mycontext.Provider value={{Note,Getnotes,DeleteNote,AddNote,EditNote,loading,msg}} >
+<mycontext.Provider value={{Note,Getnotes,DeleteNote,AddNote,EditNote,loading}} >
     {props.children}
 </mycontext.Provider>
 );
