@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import diomond from './diomond.png'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import total from './total.png'
-import mycontext from './Context/Createcontext'
+
 function Navbar(props) {
-  const {loading}=useContext(mycontext);
-  const navigate=useNavigate()
+  
+  
   
     // show total Monthly Income
 
@@ -15,7 +15,7 @@ const hendleLogout=()=>{
   const logout=window.confirm("Do You Want to Logout..?")
   if(logout){
     localStorage.removeItem('token');
-    navigate("/login")
+    window.location.href='/login'
   
   }
 
@@ -41,7 +41,7 @@ const hendleLogout=()=>{
   <div className="dropdown-content">
     <Link to="/"><i className="fa-solid fa-house mx-3"></i>Home</Link>
     <Link to="/mydata"><i className="fa-solid fa-calendar-days mx-3"></i>Report</Link>
-    <Link to="/login" onClick={hendleLogout}><i className="fa-solid fa-power-off mx-3"></i>Logout</Link>
+    <Link to="" onClick={hendleLogout}><i className="fa-solid fa-power-off mx-3"></i>Logout</Link>
   </div>
 </div>}
       </div>
