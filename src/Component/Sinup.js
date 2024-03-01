@@ -26,7 +26,7 @@ const responce=await fetch(`https://second-baay.onrender.com/api/auth/createuser
 });
 const json=await responce.json()
 setloading(false)
-console.log(json);
+
 if(json.success){
   localStorage.setItem('token',json.data)
   Navigate('/')

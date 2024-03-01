@@ -87,7 +87,6 @@ setNote(newNotes)
 
 setloading(false)
 Checkalert(json.message,json.success?"Success":"Faill")
-console.log(json)
     }
     
 

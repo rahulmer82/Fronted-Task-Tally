@@ -27,7 +27,7 @@ const Change=(e)=>{
       body: JSON.stringify({email:user.email,password:user.password})
     })
     const json=await responce.json()
-    console.log(json)
+    
     setloading(false)
     if(json.success){
       localStorage.setItem('token',json.data)
