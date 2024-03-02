@@ -3,22 +3,18 @@ import diomond from './diomond.png'
 import { Link} from 'react-router-dom'
 import total from './total.png'
 
+
+
 function Navbar(props) {
-  
   
   
     // show total Monthly Income
 
-  
-  
-const hendleLogout=()=>{
-  const logout=window.confirm("Do You Want to Logout..?")
-  if(logout){
-    localStorage.removeItem('token');
-    window.location.href='/login'
-  
-  }
 
+const hendleLogout=()=>{
+
+    localStorage.removeItem('token')
+    
 }
   return (
     <nav className="navbar mynav ">
@@ -41,7 +37,7 @@ const hendleLogout=()=>{
   <div className="dropdown-content">
     <Link to="/"><i className="fa-solid fa-house mx-3"></i>Home</Link>
     <Link to="/mydata"><i className="fa-solid fa-calendar-days mx-3"></i>Report</Link>
-    <Link to="" onClick={hendleLogout}><i className="fa-solid fa-power-off mx-3"></i>Logout</Link>
+    <Link to= "/login" onClick={hendleLogout}><i className="fa-solid fa-power-off mx-3"></i>Logout</Link>
   </div>
 </div>}
       </div>
